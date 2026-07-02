@@ -1,0 +1,121 @@
+POST http://localhost:9090/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "fullName": "Test User",
+  "username": "testuser123",
+  "email": "newemail123@gmail.com",
+  "password": "12345678"
+}
+
+###
+
+POST http://localhost:9090/login HTTP/1.1
+content-Type: application/json
+
+{
+  "email": "newemail123@gmail.com",
+  "password": "12345678"
+}
+
+###
+
+GET http://localhost:9090/get_user_and_profile
+Content-Type: application/json
+
+{
+  "token" : "9d5848a9fee1d26710f7e281b56543787c812ea9b590ee4652400c5704b89ead"
+}
+ 
+###
+
+POST http://localhost:9090/update_profile_data
+Content-Type: application/json
+
+{
+  
+  "fullName": "New Name",
+  "username":"gowri123",
+  "email":"gowri123@gmail.com",
+  "password":"123",
+  "role": "student",
+  "semester": 5,
+  "profilePicture":"1780821503061-certificate.png",
+  "bio": "MERN stack Developer BIT student",
+  "token":"9d5848a9fee1d26710f7e281b56543787c812ea9b590ee4652400c5704b89ead",
+  "resetToken":""
+
+}
+
+###
+
+POST http://localhost:9090/get_my_profile
+Content-Type: application/json
+
+{
+    "token": "9d5848a9fee1d26710f7e281b56543787c812ea9b590ee4652400c5704b89ead"
+}
+
+###
+
+POST http://localhost:9090/forgot_password
+Content-Type: application/json
+
+{
+  "email": "newemail123@gmail.com"
+}
+
+###
+
+POST http://localhost:9090/reset_password
+Content-Type: application/json
+
+{
+   "resetToken": "805db892f8bd3a93df5641eaf6ce4055337443a50b070c72935bd1c84d6da6de",
+  "newPassword": "Newpass@2222"
+}
+
+###
+
+POST http://localhost:9090/upload_notes
+
+{
+  "title": "DBMS",
+  "description": "Notes of DBMS",
+  "semester": 3,
+  "subject": "DBMS",
+  "chapter": "chapter-1",
+}
+
+###
+
+GET http://localhost:9090/get_all_notes
+
+{
+  "semester": 3, 
+}
+
+###
+
+GET http://localhost:9090/get_notes_by_semester?semester=3
+
+
+###
+
+GET http://localhost:9090/get_notes_by_subject/dbms
+
+{
+  "subject": "DBMS", 
+}
+
+###
+GET http://localhost:9090/get_notes_by_id/6a26c5432a1851791c045cd2
+
+{
+  "title": "DBMS",
+  "fileName": "1780925762794-web technology sem v (1).pdf"
+}
+
+###
+POST http://localhost:9090/upload_impQns
+Content-Type: multipart/form-data; 
